@@ -1,14 +1,14 @@
 package com.example.lr6;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.lr6.items.Drink;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class DrinkActivity extends AppCompatActivity {
+import com.example.lr6.items.CoffeePlace;
+
+public class CoffeePlaceActivity extends AppCompatActivity {
     public static final String EXTRA_ITEM_ID = "itemId";
 
     @Override
@@ -16,17 +16,17 @@ public class DrinkActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item);
         
-        int drinkId = (Integer) getIntent().getExtras().get(EXTRA_ITEM_ID);
-        Drink drink = Drink.drinks[drinkId];
+        int coffeePlaceId = (Integer) getIntent().getExtras().get(EXTRA_ITEM_ID);
+        CoffeePlace coffeePlace = CoffeePlace.coffeePlaces[coffeePlaceId];
 
         TextView name = (TextView) findViewById(R.id.name);
-        name.setText(drink.getName());
+        name.setText(coffeePlace.getName());
 
         TextView description = (TextView) findViewById(R.id.description);
-        description.setText(drink.getDescription());
+        description.setText(coffeePlace.getDescription());
 
         ImageView photo = (ImageView) findViewById(R.id.photo);
-        photo.setImageResource(drink.getImageResourceId());
-        photo.setContentDescription(drink.getName());
+        photo.setImageResource(coffeePlace.getImageResourceId());
+        photo.setContentDescription(coffeePlace.getName());
     }
 }

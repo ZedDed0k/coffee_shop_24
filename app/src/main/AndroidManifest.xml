@@ -26,9 +26,18 @@
         <activity android:name=".DrinkCategoryActivity"
             android:exported="true">
         </activity>
-
-        <!-- Добавьте другие активности здесь, если они есть -->
-
+        <activity android:name=".FoodActivity"
+            android:exported="true">
+        </activity>
+        <activity android:name=".FoodCategoryActivity"
+            android:exported="true">
+        </activity>
+        <activity android:name=".CoffeePlaceActivity"
+            android:exported="true">
+        </activity>
+        <activity android:name=".CoffeePlaceCategoryActivity"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>
