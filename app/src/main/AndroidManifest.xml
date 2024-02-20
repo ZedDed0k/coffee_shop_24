@@ -20,22 +20,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".item_activity.ItemActivity"
+            android:exported="true">
+        </activity>
         <activity android:name=".DrinkActivity"
             android:exported="true">
         </activity>
-        <activity android:name=".DrinkCategoryActivity"
+        <activity android:name=".item_category_activity.DrinkCategoryActivity"
             android:exported="true">
         </activity>
         <activity android:name=".FoodActivity"
             android:exported="true">
         </activity>
-        <activity android:name=".FoodCategoryActivity"
+        <activity android:name=".item_category_activity.FoodCategoryActivity"
             android:exported="true">
         </activity>
         <activity android:name=".CoffeePlaceActivity"
             android:exported="true">
         </activity>
-        <activity android:name=".CoffeePlaceCategoryActivity"
+        <activity android:name=".item_category_activity.CoffeePlaceCategoryActivity"
             android:exported="true">
         </activity>
     </application>

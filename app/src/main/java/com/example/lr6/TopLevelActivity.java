@@ -8,26 +8,37 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.lr6.item_category_activity.CoffeePlaceCategoryActivity;
+import com.example.lr6.item_category_activity.DrinkCategoryActivity;
+import com.example.lr6.item_category_activity.FoodCategoryActivity;
+
 public class TopLevelActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_top_level);
-        AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> listView, View itemView, int position, long id) {
-                if (position == 0) {
-                    Intent intent = new Intent(TopLevelActivity.this, DrinkCategoryActivity.class);
-                    startActivity(intent);
-                } else if (position == 1){
-                    Intent intent = new Intent(TopLevelActivity.this, FoodCategoryActivity.class);
-                    startActivity(intent);
-                } else if (position == 2){
-                    Intent intent = new Intent(TopLevelActivity.this, CoffeePlaceCategoryActivity.class);
+
+        ListView listView = findViewById(R.id.list_options);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Class<?> categoryActivity = null;
+                switch (position) {
+                    case 0:
+                        categoryActivity = DrinkCategoryActivity.class;
+                        break;
+                    case 1:
+                        categoryActivity = FoodCategoryActivity.class;
+                        break;
+                    case 2:
+                        categoryActivity = CoffeePlaceCategoryActivity.class;
+                        break;
+                }
+                if (categoryActivity != null) {
+                    Intent intent = new Intent(TopLevelActivity.this, categoryActivity);
                     startActivity(intent);
                 }
             }
-        };
-        ListView listView = (ListView) findViewById(R.id.list_options);
-        listView.setOnItemClickListener(itemClickListener);
+        });
     }
 }
